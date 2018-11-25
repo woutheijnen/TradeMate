@@ -36,7 +36,7 @@
   },
   "scripts": {
     "start": "concurrently \"react-scripts start\" \"sleep 6 && electron .\"",
-    "build": "react-scripts build && cp -f ./public/electron.js ./build/electron.js && electron-builder",
+    "build": "git pull && npm install && react-scripts build && cp -f ./public/electron.js ./build/electron.js && electron-builder",
     "test": "react-scripts test",
     "clear-modules": "rm -r -f ./node_modules",
     "refresh": "npm run clear-modules && npm run update && npm install",
