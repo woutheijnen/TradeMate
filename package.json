@@ -1,0 +1,55 @@
+{
+  "name": "trademate",
+  "version": "3.0.0",
+  "private": true,
+  "build": {
+    "appId": "com.wheijnen.trademate",
+    "mac": {
+      "category": "public.app-category.utilities"
+    },
+    "productName": "TradeMate",
+    "directories": {
+      "buildResources": "resources"
+    }
+  },
+  "homepage": "./",
+  "main": "build/electron.js",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "electron": "electron .",
+    "electron-build": "electron-builder",
+    "clear-modules": "rm -r -f ./node_modules",
+    "refresh": "npm run clear-modules && npm run update && npm install",
+    "update": "ncu -u -a"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "classnames": "^2.2.6",
+    "lodash": "^4.17.11",
+    "moment": "^2.22.2",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "react-redux": "^5.1.1",
+    "react-scripts": "2.1.1",
+    "react-spinners": "^0.4.7",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0"
+  },
+  "devDependencies": {
+    "electron": "^3.0.10",
+    "electron-builder": "^20.36.2",
+    "electron-devtools-installer": "^2.2.4"
+  },
+  "postinstall": "electron-builder install-app-deps",
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
