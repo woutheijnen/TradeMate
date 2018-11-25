@@ -5,6 +5,7 @@ const { default: installExtension, REDUX_DEVTOOLS } =
 
 const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
+const globalShortcut = electron.globalShortcut;
 
 const path = require("path");
 const url = require("url");
@@ -18,7 +19,10 @@ if (isDev) {
 }
 
 function createWindow() {
-  mainWindow = new BrowserWindow({ show: false, autoHideMenuBar: true });
+  mainWindow = new BrowserWindow({
+    show: false,
+    autoHideMenuBar: true
+  });
   mainWindow.loadURL(
     isDev
       ? "http://localhost:3000"
@@ -29,7 +33,18 @@ function createWindow() {
   mainWindow.on("closed", () => (mainWindow = null));
 }
 
-app.on("ready", createWindow);
+app.on("ready", () => {
+  globalShortcut.register("F12", () => {
+    if (mainWindow) {
+      mainWindow.openDevTools();
+    }
+  });
+  createWindow();
+});
+
+app.on("will-quit", () => {
+  globalShortcut.unregisterAll();
+});
 
 app.on("window-all-closed", () => {
   if (process.platform !== "darwin") {
