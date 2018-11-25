@@ -1,25 +1,43 @@
 {
   "name": "trademate",
-  "version": "3.0.0",
-  "private": true,
-  "build": {
-    "appId": "com.wheijnen.trademate",
-    "mac": {
-      "category": "public.app-category.utilities"
-    },
-    "productName": "TradeMate",
-    "directories": {
-      "buildResources": "resources"
-    }
+  "version": "0.1.0",
+  "description": "TradeMate multi cryptocurrency trading bot",
+  "keywords": [
+    "trademate",
+    "bot",
+    "trading",
+    "cryptocurrency",
+    "crypto",
+    "bitcoin"
+  ],
+  "homepage": "https://github.com/woutheijnen/TradeMate",
+  "bugs": {
+    "url": "https://github.com/woutheijnen/TradeMate/issues",
+    "email": "woutheijnen@hotmail.com"
   },
-  "homepage": "./",
-  "main": "build/electron.js",
+  "license": "UNLICENSED",
+  "private": true,
+  "author": {
+    "name": "Wout Heijnen",
+    "email": "woutheijnen@hotmail.com",
+    "url": "https://github.com/woutheijnen"
+  },
+  "contributors": [
+    {
+      "name": "Wout Heijnen",
+      "email": "woutheijnen@hotmail.com",
+      "url": "https://github.com/woutheijnen"
+    }
+  ],
+  "main": "public/electron.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/woutheijnen/TradeMate.git"
+  },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "concurrently \"react-scripts start\" \"sleep 6 && electron .\"",
+    "build": "react-scripts build && cp -f ./public/electron.js ./build/electron.js && electron-builder",
     "test": "react-scripts test",
-    "electron": "electron .",
-    "electron-build": "electron-builder",
     "clear-modules": "rm -r -f ./node_modules",
     "refresh": "npm run clear-modules && npm run update && npm install",
     "update": "ncu -u -a"
@@ -27,6 +45,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "classnames": "^2.2.6",
+    "electron-is-dev": "^1.0.1",
     "lodash": "^4.17.11",
     "moment": "^2.22.2",
     "react": "^16.6.3",
@@ -38,18 +57,32 @@
     "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
+    "concurrently": "^4.1.0",
     "electron": "^3.0.10",
     "electron-builder": "^20.36.2",
     "electron-devtools-installer": "^2.2.4"
   },
-  "postinstall": "electron-builder install-app-deps",
-  "eslintConfig": {
-    "extends": "react-app"
+  "build": {
+    "appId": "com.woutheijnen.trademate",
+    "mac": {
+      "category": "public.app-category.utilities"
+    },
+    "productName": "TradeMate",
+    "files": [
+      "build/**/*",
+      "node_modules/**/*"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    }
   },
   "browserslist": [
     ">0.2%",
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "eslintConfig": {
+    "extends": "react-app"
+  }
 }
