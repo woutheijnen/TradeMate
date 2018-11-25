@@ -1,0 +1,19 @@
+body {
+  background-color: rgb(22, 24, 32) !important;
+  color: rgb(240, 240, 240);
+  overflow: hidden;
+}
+
+.icon-container {
+  position: absolute;
+  top: 15px;
+  right: -2px;
+  width: 42px;
+  height: 42px;
+}
+
+.icon-container svg {
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+}
