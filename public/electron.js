@@ -34,7 +34,7 @@ function createWindow() {
 }
 
 app.on("ready", () => {
-  globalShortcut.register("F12", () => {
+  globalShortcut.register("CommandOrControl+F12", () => {
     if (mainWindow) {
       mainWindow.openDevTools();
     }
