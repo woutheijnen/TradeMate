@@ -75,7 +75,6 @@
       "build/**/*",
       "node_modules/**/*"
     ],
-    "buildDependenciesFromSource": true,
     "directories": {
       "buildResources": "assets"
     }
