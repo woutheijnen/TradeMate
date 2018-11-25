@@ -36,10 +36,9 @@
   },
   "scripts": {
     "start": "concurrently \"react-scripts start\" \"sleep 6 && electron .\"",
-    "build": "npm run checkout && npm install && npm run execute-build-script",
-    "execute-build-script": "react-scripts build && electron-builder",
+    "build": "react-scripts build && electron-builder",
+    "deploy": "git fetch --all && git reset --hard origin/master && npm install && npm run build",
     "test": "react-scripts test",
-    "checkout": "git fetch --all && git reset --hard origin/master",
     "clear-modules": "rm -r -f ./node_modules",
     "refresh": "npm run clear-modules && npm run update && npm install",
     "update": "ncu -u -a"
