@@ -6,6 +6,7 @@ const { default: installExtension, REDUX_DEVTOOLS } =
 const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
 const globalShortcut = electron.globalShortcut;
+const session = electron.session;
 
 const path = require("path");
 const url = require("url");
@@ -38,6 +39,16 @@ app.on("ready", () => {
     if (mainWindow) {
       mainWindow.openDevTools();
     }
+  });
+  session.defaultSession.webRequest.onHeadersReceived((details, callback) => {
+    callback({
+      responseHeaders: {
+        ...details.responseHeaders,
+        "Content-Security-Policy": [
+          "script-src 'unsafe-inline' 'self' http://localhost:3000"
+        ]
+      }
+    });
   });
   createWindow();
 });
