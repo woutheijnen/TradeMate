@@ -18,7 +18,7 @@ installExtension(REDUX_DEVTOOLS)
   .catch(err => console.log("An error occurred: ", err));
 
 function createWindow() {
-  mainWindow = new BrowserWindow({ show: false });
+  mainWindow = new BrowserWindow({ show: false, autoHideMenuBar: true });
   mainWindow.loadURL(
     isDev
       ? "http://localhost:3000"
