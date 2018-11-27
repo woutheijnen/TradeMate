@@ -24,8 +24,10 @@
     "build": "react-scripts build && electron-builder",
     "deploy": "git fetch --all && git reset --hard origin/master && npm install && npm run build",
     "test": "react-scripts test",
-    "clear-modules": "rm -r -f ./node_modules && rm - ./package-lock.json",
+    "clear-modules": "rm -r -f ./node_modules && rm -f ./package-lock.json",
     "install:clean": "npm run clear-modules && npm install",
+    "lint:check": "eslint . --ext=js,jsx;  exit 0",
+    "lint:fix": "eslint . --ext=js,jsx --fix;  exit 0",
     "refresh": "npm run clear-modules && npm run update && npm install",
     "update": "ncu -u -a"
   },
@@ -52,7 +54,19 @@
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0"
   },
+  "optionalDependencies": {
+    "eslint-config-prettier": "3.3.0",
+    "eslint-plugin-prettier": "3.0.0",
+    "eslint-plugin-react": "7.11.1",
+    "prettier": "1.15.2"
+  },
   "devDependencies": {
+    "babel-cli": "6.26.0",
+    "babel-plugin-import-rename": "1.0.1",
+    "babel-plugin-module-resolver": "3.1.1",
+    "babel-plugin-transform-object-rest-spread": "6.26.0",
+    "babel-plugin-transform-react-jsx": "6.24.1",
+    "babel-preset-env": "^1.7.0",
     "concurrently": "^4.1.0",
     "electron": "^3.0.10",
     "electron-builder": "^20.36.2",

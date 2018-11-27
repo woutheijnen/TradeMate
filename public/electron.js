@@ -1,7 +1,6 @@
 const electron = require("electron");
 const isDev = require("electron-is-dev");
-const { default: installExtension, REDUX_DEVTOOLS } =
-  isDev && require("electron-devtools-installer");
+const { default: installExtension, REDUX_DEVTOOLS } = isDev && require("electron-devtools-installer");
 
 const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
@@ -24,11 +23,7 @@ function createWindow() {
     show: false,
     autoHideMenuBar: true
   });
-  mainWindow.loadURL(
-    isDev
-      ? "http://localhost:3000"
-      : `file://${path.join(__dirname, "../build/index.html")}`
-  );
+  mainWindow.loadURL(isDev ? "http://localhost:3000" : `file://${path.join(__dirname, "../build/index.html")}`);
   mainWindow.maximize();
   mainWindow.show();
   mainWindow.on("closed", () => (mainWindow = null));
@@ -45,7 +40,7 @@ app.on("ready", () => {
       responseHeaders: {
         ...details.responseHeaders,
         "Content-Security-Policy": [
-          "script-src 'unsafe-inline' 'self' http://localhost:3000"
+          "script-src 'unsafe-inline' 'self' http://localhost:3000 https://fonts.googleapis.com https://cdn.jsdelivr.net"
         ]
       }
     });
