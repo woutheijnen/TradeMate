@@ -2,14 +2,6 @@
   "name": "trademate",
   "version": "0.1.0",
   "description": "TradeMate multi cryptocurrency trading bot",
-  "keywords": [
-    "trademate",
-    "bot",
-    "trading",
-    "cryptocurrency",
-    "crypto",
-    "bitcoin"
-  ],
   "homepage": "./",
   "bugs": {
     "url": "https://github.com/woutheijnen/TradeMate/issues",
@@ -22,13 +14,6 @@
     "email": "woutheijnen@hotmail.com",
     "url": "https://github.com/woutheijnen"
   },
-  "contributors": [
-    {
-      "name": "Wout Heijnen",
-      "email": "woutheijnen@hotmail.com",
-      "url": "https://github.com/woutheijnen"
-    }
-  ],
   "main": "public/electron.js",
   "repository": {
     "type": "git",
@@ -39,23 +24,31 @@
     "build": "react-scripts build && electron-builder",
     "deploy": "git fetch --all && git reset --hard origin/master && npm install && npm run build",
     "test": "react-scripts test",
-    "clear-modules": "rm -r -f ./node_modules",
+    "clear-modules": "rm -r -f ./node_modules && rm - ./package-lock.json",
+    "install:clean": "npm run clear-modules && npm install",
     "refresh": "npm run clear-modules && npm run update && npm install",
     "update": "ncu -u -a"
   },
   "dependencies": {
-    "@material-ui/core": "^3.5.1",
-    "@material-ui/icons": "^3.0.1",
+    "@material-ui/core": "3.6.0",
+    "@material-ui/icons": "3.0.1",
+    "ajv": "^6.5.5",
     "axios": "^0.18.0",
-    "classnames": "^2.2.6",
+    "chartist": "0.11.0",
+    "classnames": "2.2.6",
     "electron-is-dev": "^1.0.1",
     "lodash": "^4.17.11",
     "moment": "^2.22.2",
-    "react": "^16.6.3",
-    "react-dom": "^16.6.3",
+    "npm-run-all": "4.1.5",
+    "perfect-scrollbar": "1.4.0",
+    "react": "16.6.3",
+    "react-chartist": "0.13.1",
+    "react-dom": "16.6.3",
     "react-redux": "^5.1.1",
+    "react-router-dom": "4.3.1",
     "react-scripts": "2.1.1",
     "react-spinners": "^0.4.7",
+    "react-swipeable-views": "0.13.0",
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0"
   },
