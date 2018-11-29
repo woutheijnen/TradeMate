@@ -49,7 +49,7 @@ const style = {
     textDecoration: "none"
   }
 };
-function TypographyPage(props) {
+function SystemStats(props) {
   const { classes } = props;
   return (
     <Card>
@@ -152,4 +152,4 @@ function TypographyPage(props) {
   );
 }
 
-export default withStyles(style)(TypographyPage);
+export default withStyles(style)(SystemStats);

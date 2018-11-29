@@ -81,7 +81,7 @@ const styles = {
   }
 };
 
-function UpgradeToPro(props) {
+function Bot(props) {
   const { classes } = props;
   return (
     <GridContainer justify="center">
@@ -205,4 +205,4 @@ function UpgradeToPro(props) {
   );
 }
 
-export default withStyles(styles)(UpgradeToPro);
+export default withStyles(styles)(Bot);
