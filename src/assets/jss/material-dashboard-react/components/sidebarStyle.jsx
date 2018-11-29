@@ -14,10 +14,12 @@ import {
 const sidebarStyle = theme => ({
   drawerPaper: {
     border: "none",
+    borderRight: "solid 1px darkcyan",
     position: "fixed",
     top: "0",
     bottom: "0",
     left: "0",
+    overflowX: "hidden",
     zIndex: "1",
     ...boxShadow,
     width: drawerWidth,

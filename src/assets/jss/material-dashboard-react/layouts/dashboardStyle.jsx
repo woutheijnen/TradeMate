@@ -1,8 +1,4 @@
-import {
-  drawerWidth,
-  transition,
-  container
-} from "assets/jss/material-dashboard-react.jsx";
+import { drawerWidth, transition, container } from "assets/jss/material-dashboard-react.jsx";
 
 const appStyle = theme => ({
   wrapper: {
@@ -30,6 +26,14 @@ const appStyle = theme => ({
   container,
   map: {
     marginTop: "70px"
+  },
+  backdrop: {
+    backgroundColor: "#000",
+    height: "100%",
+    opacity: 0.25,
+    position: "fixed",
+    width: "100%",
+    zIndex: -1
   }
 });
 

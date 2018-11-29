@@ -90,6 +90,7 @@ class App extends React.Component {
           )}
           {this.getRoute() ? <Footer /> : null}
         </div>
+        <div className={classes.backdrop} />
       </div>
     );
   }
