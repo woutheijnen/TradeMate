@@ -68,12 +68,14 @@ const sidebarStyle = theme => ({
     textTransform: "uppercase",
     padding: "10px 0",
     display: "block",
-    fontSize: "18px",
+    fontSize: "20px",
     textAlign: "left",
     fontWeight: "400",
-    lineHeight: "30px",
+    lineHeight: "31px",
     textDecoration: "none",
+    textShadow: "0 0 2px white",
     backgroundColor: "transparent",
+    letterSpacing: 1.2,
     "&,&:hover": {
       color: "#FFFFFF"
     }
@@ -83,7 +85,7 @@ const sidebarStyle = theme => ({
     display: "inline-block",
     maxHeight: "30px",
     marginLeft: "10px",
-    marginRight: "15px"
+    marginRight: "22px"
   },
   img: {
     width: "35px",

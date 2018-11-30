@@ -1,22 +1,13 @@
 import React from "react";
 import classNames from "classnames";
-// @material-ui/core components
-import withStyles from "@material-ui/core/styles/withStyles";
-import MenuItem from "@material-ui/core/MenuItem";
-import MenuList from "@material-ui/core/MenuList";
-import Grow from "@material-ui/core/Grow";
-import Paper from "@material-ui/core/Paper";
-import ClickAwayListener from "@material-ui/core/ClickAwayListener";
-import Hidden from "@material-ui/core/Hidden";
-import Poppers from "@material-ui/core/Popper";
-// @material-ui/icons
-import Person from "@material-ui/icons/Person";
-import Notifications from "@material-ui/icons/Notifications";
-import Dashboard from "@material-ui/icons/Dashboard";
-import Search from "@material-ui/icons/Search";
-// core components
-import CustomInput from "components/CustomInput/CustomInput.jsx";
+
+// Components
 import Button from "components/CustomButtons/Button.jsx";
+
+// Material UI
+import withStyles from "@material-ui/core/styles/withStyles";
+import { ClickAwayListener, Grow, Hidden, MenuItem, MenuList, Paper, Popper } from "@material-ui/core";
+import { Notifications } from "@material-ui/icons";
 
 import headerLinksStyle from "assets/jss/material-dashboard-react/components/headerLinksStyle.jsx";
 
@@ -41,34 +32,6 @@ class HeaderLinks extends React.Component {
     const { open } = this.state;
     return (
       <div>
-        <div className={classes.searchWrapper}>
-          <CustomInput
-            formControlProps={{
-              className: classes.margin + " " + classes.search
-            }}
-            inputProps={{
-              placeholder: "Search",
-              inputProps: {
-                "aria-label": "Search"
-              }
-            }}
-          />
-          <Button color="white" aria-label="edit" justIcon round>
-            <Search />
-          </Button>
-        </div>
-        <Button
-          color={window.innerWidth > 959 ? "transparent" : "white"}
-          justIcon={window.innerWidth > 959}
-          simple={!(window.innerWidth > 959)}
-          aria-label="Dashboard"
-          className={classes.buttonLink}
-        >
-          <Dashboard className={classes.icons} />
-          <Hidden mdUp implementation="css">
-            <p className={classes.linkText}>Dashboard</p>
-          </Hidden>
-        </Button>
         <div className={classes.manager}>
           <Button
             buttonRef={node => {
@@ -90,57 +53,37 @@ class HeaderLinks extends React.Component {
               </p>
             </Hidden>
           </Button>
-          <Poppers
+          <Popper
             open={open}
             anchorEl={this.anchorEl}
             transition
             disablePortal
-            className={
-              classNames({ [classes.popperClose]: !open }) +
-              " " +
-              classes.pooperNav
-            }
+            className={classNames({ [classes.popperClose]: !open }) + " " + classes.pooperNav}
           >
             {({ TransitionProps, placement }) => (
               <Grow
                 {...TransitionProps}
                 id="menu-list-grow"
                 style={{
-                  transformOrigin:
-                    placement === "bottom" ? "center top" : "center bottom"
+                  transformOrigin: placement === "bottom" ? "center top" : "center bottom"
                 }}
               >
                 <Paper>
                   <ClickAwayListener onClickAway={this.handleClose}>
                     <MenuList role="menu">
-                      <MenuItem
-                        onClick={this.handleClose}
-                        className={classes.dropdownItem}
-                      >
+                      <MenuItem onClick={this.handleClose} className={classes.dropdownItem}>
                         Mike John responded to your email
                       </MenuItem>
-                      <MenuItem
-                        onClick={this.handleClose}
-                        className={classes.dropdownItem}
-                      >
+                      <MenuItem onClick={this.handleClose} className={classes.dropdownItem}>
                         You have 5 new tasks
                       </MenuItem>
-                      <MenuItem
-                        onClick={this.handleClose}
-                        className={classes.dropdownItem}
-                      >
+                      <MenuItem onClick={this.handleClose} className={classes.dropdownItem}>
                         You're now friend with Andrew
                       </MenuItem>
-                      <MenuItem
-                        onClick={this.handleClose}
-                        className={classes.dropdownItem}
-                      >
+                      <MenuItem onClick={this.handleClose} className={classes.dropdownItem}>
                         Another Notification
                       </MenuItem>
-                      <MenuItem
-                        onClick={this.handleClose}
-                        className={classes.dropdownItem}
-                      >
+                      <MenuItem onClick={this.handleClose} className={classes.dropdownItem}>
                         Another One
                       </MenuItem>
                     </MenuList>
@@ -148,20 +91,8 @@ class HeaderLinks extends React.Component {
                 </Paper>
               </Grow>
             )}
-          </Poppers>
+          </Popper>
         </div>
-        <Button
-          color={window.innerWidth > 959 ? "transparent" : "white"}
-          justIcon={window.innerWidth > 959}
-          simple={!(window.innerWidth > 959)}
-          aria-label="Person"
-          className={classes.buttonLink}
-        >
-          <Person className={classes.icons} />
-          <Hidden mdUp implementation="css">
-            <p className={classes.linkText}>Profile</p>
-          </Hidden>
-        </Button>
       </div>
     );
   }

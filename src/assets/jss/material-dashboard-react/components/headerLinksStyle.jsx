@@ -1,29 +1,9 @@
-import {
-  defaultFont,
-  dangerColor
-} from "assets/jss/material-dashboard-react.jsx";
+import { defaultFont, dangerColor } from "assets/jss/material-dashboard-react.jsx";
 
 import dropdownStyle from "assets/jss/material-dashboard-react/dropdownStyle.jsx";
 
 const headerLinksStyle = theme => ({
   ...dropdownStyle(theme),
-  search: {
-    "& > div": {
-      marginTop: "0"
-    },
-    [theme.breakpoints.down("sm")]: {
-      margin: "10px 15px !important",
-      float: "none !important",
-      paddingTop: "1px",
-      paddingBottom: "1px",
-      padding: "0!important",
-      width: "60%",
-      marginTop: "40px",
-      "& input": {
-        color: "#FFFFFF"
-      }
-    }
-  },
   linkText: {
     zIndex: "4",
     ...defaultFont,
@@ -55,21 +35,6 @@ const headerLinksStyle = theme => ({
       }
     }
   },
-  searchButton: {
-    [theme.breakpoints.down("sm")]: {
-      top: "-50px !important",
-      marginRight: "22px",
-      float: "right"
-    }
-  },
-  margin: {
-    zIndex: "4",
-    margin: "0"
-  },
-  searchIcon: {
-    width: "17px",
-    zIndex: "4"
-  },
   notifications: {
     zIndex: "4",
     [theme.breakpoints.up("md")]: {
@@ -77,14 +42,14 @@ const headerLinksStyle = theme => ({
       top: "2px",
       border: "1px solid #FFF",
       right: "4px",
-      fontSize: "9px",
+      fontSize: "12px",
       background: dangerColor,
       color: "#FFFFFF",
-      minWidth: "16px",
-      height: "16px",
+      minWidth: "20px",
+      height: "20px",
       borderRadius: "10px",
       textAlign: "center",
-      lineHeight: "16px",
+      lineHeight: "20px",
       verticalAlign: "middle",
       display: "block"
     },
@@ -98,14 +63,14 @@ const headerLinksStyle = theme => ({
     [theme.breakpoints.down("sm")]: {
       width: "100%"
     },
-    display: "inline-block"
+    display: "inline-block",
+    marginRight: 4
   },
-  searchWrapper: {
-    [theme.breakpoints.down("sm")]: {
-      width: "-webkit-fill-available",
-      margin: "10px 15px 0"
-    },
-    display: "inline-block"
+  icons: {
+    color: "white",
+    height: "30px !important",
+    width: "30px !important",
+    top: "-4px !important"
   }
 });
 

@@ -1,6 +1,7 @@
 import {
   container,
   defaultFont,
+  drawerWidth,
   primaryColor,
   defaultBoxShadow,
   infoColor,
@@ -11,13 +12,17 @@ import {
 
 const headerStyle = theme => ({
   appBar: {
+    [theme.breakpoints.up("md")]: {
+      width: `calc(100% - ${drawerWidth}px)`
+    },
     backgroundColor: "transparent",
     boxShadow: "none",
     borderBottom: "0",
     marginBottom: "0",
-    position: "absolute",
+    position: "fixed",
+    float: "right",
     width: "100%",
-    paddingTop: "10px",
+    paddingTop: 0,
     zIndex: "1029",
     color: "#555555",
     border: "0",
@@ -29,6 +34,8 @@ const headerStyle = theme => ({
   },
   container: {
     ...container,
+    backgroundColor: "rgba(0, 0, 0, 0.8)",
+    boxShadow: "0 0 10px black",
     minHeight: "50px"
   },
   flex: {
@@ -36,15 +43,8 @@ const headerStyle = theme => ({
   },
   title: {
     ...defaultFont,
-    lineHeight: "30px",
-    fontSize: "18px",
-    borderRadius: "3px",
-    textTransform: "none",
-    color: "inherit",
-    margin: "0",
-    "&:hover,&:focus": {
-      background: "transparent"
-    }
+    color: "white",
+    textShadow: "0 0 1px white"
   },
   appResponsive: {
     top: "8px"

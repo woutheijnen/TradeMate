@@ -2,20 +2,21 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Switch, Route, Redirect } from "react-router-dom";
-// creates a beautiful scrollbar
 import PerfectScrollbar from "perfect-scrollbar";
 import "perfect-scrollbar/css/perfect-scrollbar.css";
-// @material-ui/core components
-import withStyles from "@material-ui/core/styles/withStyles";
-// core components
+
+// Components
 import Header from "components/Header/Header.jsx";
-import Footer from "components/Footer/Footer.jsx";
 import Sidebar from "components/Sidebar/Sidebar.jsx";
 
+// Material UI
+import withStyles from "@material-ui/core/styles/withStyles";
+
+// Routes
 import dashboardRoutes from "routes/dashboard.jsx";
 
+// Assets
 import dashboardStyle from "assets/jss/material-dashboard-react/layouts/dashboardStyle.jsx";
-
 import image from "assets/img/sidebar.jpg";
 import logo from "assets/img/trademate-logo.png";
 
@@ -28,7 +29,7 @@ const switchRoutes = (
   </Switch>
 );
 
-class App extends React.Component {
+class Dashboard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -88,7 +89,6 @@ class App extends React.Component {
           ) : (
             <div className={classes.map}>{switchRoutes}</div>
           )}
-          {this.getRoute() ? <Footer /> : null}
         </div>
         <div className={classes.backdrop} />
       </div>
@@ -96,8 +96,8 @@ class App extends React.Component {
   }
 }
 
-App.propTypes = {
+Dashboard.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(dashboardStyle)(App);
+export default withStyles(dashboardStyle)(Dashboard);
