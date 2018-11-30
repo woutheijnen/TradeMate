@@ -88,11 +88,13 @@ const sidebarStyle = theme => ({
     marginRight: "22px"
   },
   img: {
-    width: "35px",
-    top: "22px",
+    width: "52px",
+    left: "15px",
+    top: "13px",
     position: "absolute",
     verticalAlign: "middle",
-    border: "0"
+    border: "0",
+    marginLeft: 1
   },
   background: {
     position: "absolute",
@@ -216,6 +218,7 @@ const sidebarStyle = theme => ({
     position: "relative",
     height: "calc(100vh - 75px)",
     overflow: "auto",
+    overflowX: "hidden",
     width: "260px",
     zIndex: "4",
     overflowScrolling: "touch"
