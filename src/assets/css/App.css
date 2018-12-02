@@ -1,3 +1,4 @@
 body {
   background-image: url(../img/background.jpg);
+  -webkit-user-select: none;
 }

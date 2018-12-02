@@ -21,12 +21,17 @@ if (isDev) {
 function createWindow() {
   mainWindow = new BrowserWindow({
     show: false,
-    autoHideMenuBar: true
+    autoHideMenuBar: true,
+    title: "TradeMate",
+    backgroundColor: "#000"
   });
   mainWindow.loadURL(isDev ? "http://localhost:3000" : `file://${path.join(__dirname, "../build/index.html")}`);
   mainWindow.maximize();
-  mainWindow.show();
   mainWindow.on("closed", () => (mainWindow = null));
+  mainWindow.on("ready-to-show", function() {
+    mainWindow.show();
+    mainWindow.focus();
+  });
 }
 
 app.on("ready", () => {
