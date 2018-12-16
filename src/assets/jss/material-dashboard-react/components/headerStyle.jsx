@@ -30,15 +30,13 @@ const headerStyle = theme => ({
     padding: "10px 0",
     transition: "all 150ms ease 0s",
     minHeight: "50px",
-    display: "block",
-    overflowX: "hidden",
-    overflowY: "-webkit-paged-y"
+    display: "block"
   },
   container: {
     ...container,
     backgroundColor: "rgba(0, 0, 0, 0.8)",
-    boxShadow: "0 0 10px black",
-    minHeight: "50px"
+    minHeight: "50px",
+    paddingLeft: 24
   },
   flex: {
     flex: 1
