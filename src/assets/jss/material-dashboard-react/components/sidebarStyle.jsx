@@ -13,8 +13,9 @@ import {
 
 const sidebarStyle = theme => ({
   drawerPaper: {
+    backgroundColor: "rgb(11, 12, 16)",
     border: "none",
-    borderRight: "solid 1px darkcyan",
+    borderRight: `solid 1px ${infoColor}`,
     position: "fixed",
     top: "0",
     bottom: "0",
@@ -39,7 +40,7 @@ const sidebarStyle = theme => ({
       left: "auto",
       zIndex: "1032",
       visibility: "visible",
-      overflowY: "visible",
+      overflow: "hidden",
       borderTop: "none",
       textAlign: "left",
       paddingRight: "0px",
@@ -136,13 +137,14 @@ const sidebarStyle = theme => ({
   },
   itemLink: {
     width: "auto",
-    transition: "all 300ms linear",
-    margin: "10px 15px 0",
-    borderRadius: "3px",
+    margin: "0",
     position: "relative",
     display: "block",
     padding: "10px 15px",
-    backgroundColor: "transparent",
+    backgroundColor: "rgb(0, 51, 102)",
+    "&:hover": {
+      backgroundColor: "rgb(0, 77, 153)"
+    },
     ...defaultFont
   },
   itemIcon: {

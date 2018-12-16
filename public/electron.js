@@ -15,7 +15,9 @@ let mainWindow;
 if (isDev) {
   installExtension(REDUX_DEVTOOLS)
     .then(name => console.log(`Added Extension:  ${name}`))
-    .catch(err => console.log("An error occurred: ", err));
+    .catch(err => {
+      /* ignore */
+    });
 }
 
 function createWindow() {
@@ -23,7 +25,7 @@ function createWindow() {
     show: false,
     autoHideMenuBar: true,
     title: "TradeMate",
-    backgroundColor: "#000"
+    backgroundColor: "#0b0c10"
   });
   mainWindow.loadURL(isDev ? "http://localhost:3000" : `file://${path.join(__dirname, "../build/index.html")}`);
   mainWindow.maximize();
