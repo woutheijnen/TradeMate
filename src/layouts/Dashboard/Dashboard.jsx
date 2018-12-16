@@ -5,18 +5,18 @@ import PerfectScrollbar from "perfect-scrollbar";
 import "perfect-scrollbar/css/perfect-scrollbar.css";
 
 // Components
-import Header from "components/Header/Header.jsx";
-import Sidebar from "components/Sidebar/Sidebar.jsx";
+import Header from "../../components/Header/Header.jsx";
+import Sidebar from "../../components/Sidebar/Sidebar.jsx";
 
 // Material UI
 import withStyles from "@material-ui/core/styles/withStyles";
 
 // Routes
-import dashboardRoutes from "routes/dashboard.jsx";
+import dashboardRoutes from "../../routes/dashboard.jsx";
 
 // Assets
-import dashboardStyle from "assets/jss/material-dashboard-react/layouts/dashboardStyle.jsx";
-import logo from "assets/img/trademate-logo.png";
+import dashboardStyle from "../../assets/jss/material-dashboard-react/layouts/dashboardStyle.jsx";
+import logo from "../../assets/img/trademate-logo.png";
 
 const switchRoutes = (
   <Switch>
