@@ -3,6 +3,7 @@ const addBotStyle = {
     flexGrow: 1
   },
   botType: {
+    boxShadow: "none !important",
     margin: "0 20px",
     width: "calc(100% / 3 - 40px)"
   },
